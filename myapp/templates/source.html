@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>source</title>
+</head>
+<body >
+    {% block content %} 
+	<h1 align="center">source</h1>
+	<table border="1" align="center">
+    <tr>
+        <th>source name</th>
+        <th>source update</th>
+        <th>source delete</th>
+
+    </tr>
+	{% for i in source %}
+	<tr> 
+        <td>{{ i.source_name }}</td>
+        <td><button type="button"><a href="#"> update</a></button></td>
+        <td><button type="button"><a href="#"> delete</a></button></td>
+    </tr>	
+	{% endfor %}
+	</table>	
+    {% endblock %}
+</body>
+</html>

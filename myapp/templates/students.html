@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>STUDENTS</title>
+</head>
+<body>
+{% block content %}
+<h1 align="center">completed</h1>
+	<table border="1" align="center">
+    <tr>
+        <th>first name</th>
+        <th>last name</th>
+        <th>course</th>
+        <th>date</th>
+        <th>course fee</th>
+        <th>instructor</th>
+        <th>aadhar number</th>
+        <th>mobile </th>
+        <th>email</th>
+        <th>remarks</th>
+        <th>status</th>
+        <th>update</th>
+        <th>delete</th>
+    </tr>
+	{% for i in completed %}
+	<tr> 
+        <td>{{ i.first_name }}</td>
+        <td>{{ i.last_name }}</td>
+        <td>{{ i.course }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.course_fee }}</td>
+        <td>{{ i.instructor }}</td>
+        <td>{{ i.aadhar }}</td>
+        <td>{{ i.mobile }}</td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.remarks }}</td>
+        <td>{{ i.status }}</td>
+        
+        <td><button type="button"><a href="{% url 'student_update' pk=i.id %}"> update</a></button></td>
+        <td><button type="button"><a href="{% url 'student_delete' pk=i.id %}"> delete</a></button></td>
+    </tr>	
+	{% endfor %}
+	</table>
+<h1 align="center">ongoing</h1>
+	<table border="1" align="center">
+    <tr>
+        <th>first name</th>
+        <th>last name</th>
+        <th>course</th>
+        <th>date</th>
+        <th>course fee</th>
+        <th>instructor</th>
+        <th>aadhar number</th>
+        <th>mobile </th>
+        <th>email</th>
+        <th>remarks</th>
+        <th>status</th>
+        <th>update</th>
+        <th>delete</th>
+    </tr>
+	{% for i in ongoing %}
+	<tr> 
+        <td>{{ i.first_name }}</td>
+        <td>{{ i.last_name }}</td>
+        <td>{{ i.course }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.course_fee }}</td>
+        <td>{{ i.instructor }}</td>
+        <td>{{ i.aadhar }}</td>
+        <td>{{ i.mobile }}</td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.remarks }}</td>
+        <td>{{ i.status }}</td>
+        
+        <td><button type="button"><a href="#"> update</a></button></td>
+        <td><button type="button"><a href="#"> delete</a></button></td>
+    </tr>	
+	{% endfor %}
+	</table>
+
+<h1 align="center">delayed</h1>
+	<table border="1" align="center">
+    <tr>
+        <th>first name</th>
+        <th>last name</th>
+        <th>course</th>
+        <th>date</th>
+        <th>course fee</th>
+        <th>instructor</th>
+        <th>aadhar number</th>
+        <th>mobile </th>
+        <th>email</th>
+        <th>remarks</th>
+        <th>status</th>
+        <th>update</th>
+        <th>delete</th>
+    </tr>
+	{% for i in delay %}
+	<tr> 
+        <td>{{ i.first_name }}</td>
+        <td>{{ i.last_name }}</td>
+        <td>{{ i.course }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.course_fee }}</td>
+        <td>{{ i.instructor }}</td>
+        <td>{{ i.aadhar }}</td>
+        <td>{{ i.mobile }}</td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.remarks }}</td>
+        <td>{{ i.status }}</td>
+        
+        <td><button type="button"><a href="#"> update</a></button></td>
+        <td><button type="button"><a href="#"> delete</a></button></td>
+    </tr>	
+	{% endfor %}
+	</table>
+
+
+{% endblock %}
+
+</body>
+</html>

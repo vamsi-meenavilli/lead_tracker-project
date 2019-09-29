@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+<html>
+<head>
+<title>Student Registration Form</title>
+
+</head>
+ 
+<body>
+{% block content %}
+<h3 align="center" style="font-size:60px";>STUDENT REGISTRATION FORM</h3>
+<form method="POST">
+	{% csrf_token%}
+<div>
+	<table align="center" cellpadding = "10">
+		<tr>
+		<td>FIRST NAME</td>
+		<td><input type="text" name="First_Name" maxlength="30"/>
+		(max 30 characters a-z and A-Z)
+		</td>
+		</tr>
+		<tr>
+		<td>LAST NAME</td>
+		<td><input type="text" name="Last_Name" maxlength="30"/>
+		(max 30 characters a-z and A-Z)
+		</td>
+		</tr>
+
+		<tr>
+		<td>MOBILE NUMBER</td>
+		<td>
+		<input type="text" name="Mobile_Number" maxlength="10" />
+		(10 digit number)
+		</td>
+		</tr>
+
+		<tr>
+		<td>EMAIL ID</td>
+		<td><input type="text" name="Email_Id" maxlength="100" /> (max 30 characters)</td>
+		</tr>
+
+		<tr>
+		<td>DATE</td>
+		<td><input type="date" name="DATE" value='{{m.date|date:"Y-m-d"}}'></td>
+		</tr>
+
+		<tr>
+		<td>COURSE</td>
+		<td>
+		<select name="COURSE">
+		<option value="">---------</option>
+		{% for i in course %}
+		<option value="{{ i.course_name }}">{{ i.course_name }}</option>
+		{% endfor %}
+		</select>
+		</td>
+		</tr>
+
+		<tr>
+		<td>SOURCE</td>
+		<td>
+		<select name="SOURCE">
+		<option value="">---------</option>
+		{% for i in source %}
+		<option value="{{ i.source_name }}">{{ i.source_name }}</option>
+		{% endfor %}
+		</select>
+		</td>
+		</tr>
+
+		<tr>
+		<td>LEAD STATUS</td>
+		<td>
+		<select name="LEAD STATUS">
+		<option value="">---------</option>
+		{% for i in lead_status %}
+		<option value="{{ i.lead_status }}">{{ i.lead_status }}</option>
+		{% endfor %}
+		</select>
+		</td>
+		</tr>
+
+		<tr>
+		<td>COUNSELOR</td>
+		<td><input type="text" name="COUNSELOR" maxlength="30"/></td>
+		</tr>
+
+		<tr>
+		<td>REMARKS</td>
+		<td><input type="text" name="REMARKS" maxlength="30"/></td>
+		</tr>
+
+		<td style="text-align:center">  
+		    <input type="submit" style="width: 100px; margin: 0 auto;" />  
+		</td>
+	</table> 
+
+</div>
+</form>
+{% endblock %}
+</body>
+</html>

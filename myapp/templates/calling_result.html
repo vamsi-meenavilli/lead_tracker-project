@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calling results</title>
+</head>
+<body >
+    {% block content %} 
+	<h1 align="center">calling results</h1>
+	<table border="1" align="center">
+    <tr>
+        <th>first name</th>
+        <th>last name</th>
+        <th>mobile </th>
+        <th>email</th>
+        <th>date</th>
+        <th>course</th>
+        <th>source</th>
+        <th>lead status</th>
+        <th>counselor</th>
+        <th>remarks</th>
+    </tr>
+	{% for i in calling_results %}
+	<tr> 
+        <td>{{ i.first_name }}</td>
+        <td>{{ i.last_name }}</td>
+        <td>{{ i.mobile }}</td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.course }}</td>
+        <td>{{ i.source }}</td>
+        <td>{{ i.lead_status }}</td>
+        <td>{{ i.counselor }}</td>
+        <td>{{ i.remarks }}</td>
+    </tr>	
+	{% endfor %}
+	</table>
+    {% endblock %}	
+</body>
+</html>

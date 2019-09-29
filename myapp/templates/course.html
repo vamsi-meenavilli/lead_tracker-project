@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>course</title>
+</head>
+<body >
+    {% block content %} 
+	<h1 align="center">course</h1>
+	<table border="1" align="center">
+    <tr>
+        <th>course name</th>
+        <th>course instructor</th>
+        <th>course duration</th>
+        <th>course update</th>
+        <th>course delete</th>
+    </tr>
+	{% for i in course %}
+	<tr> 
+        <td>{{ i.course_name }}</td>
+        <td>{{ i.course_instructor }}</td>
+        <td>{{ i.course_duration }}</td>
+        <td><button type="button"><a href="#"> update</a></button></td>
+        <td><button type="button"><a href="#"> delete</a></button></td>
+    </tr>	
+	{% endfor %}
+	</table>	
+    {% endblock %}
+</body>
+</html>

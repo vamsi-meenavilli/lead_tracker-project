@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>counselling</title>
+</head>
+<body>
+	{% block content %}	
+<h1 align="center">counselling</h1>
+<form method="POST">
+	{% csrf_token %}
+	<table align="center">
+		<tr>
+		<td>counselling</td>
+		<td>
+		<select name="counselling">
+		<option value="">---------</option>
+		{% for i in course %}
+		<option value="{{ i.course_name }}">{{ i.course_name }}</option>
+		{% endfor %}
+		</select>
+		</td>
+		</tr>
+
+		<tr>
+		<td>DATE</td>
+		<td><input type="date" name="DATE"></td><br>
+		</tr>
+
+		<tr>
+		<td><input type="submit" name="date" value="find"></td><br>
+		</tr>
+	</table>
+</form>
+{% endblock %}
+</body>
+</html>

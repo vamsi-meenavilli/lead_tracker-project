@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>current_status</title>
+</head>
+<body>
+
+{% block content %}
+	<form method="POST">
+		{%csrf_token%}
+	<h1 align="center">current_status</h1>
+	<table border="1" align="center">
+    <tr>
+        <th>first name</th>
+        <th>last name</th>
+        <th>course</th>
+        <th>date</th>
+        <th>course fee</th>
+        <th>instructor</th>
+        <th>aadhar number</th>
+        <th>mobile </th>
+        <th>email</th>
+        <th>remarks</th>
+        <th>status</th>
+
+    </tr>
+    {% for current_status in current_status %}
+	<tr> 
+		
+        <td>{{ current_status.first_name }}</td>
+        <td>{{ current_status.last_name }}</td>
+        <td>{{ current_status.course }}</td>
+        <td>{{ current_status.date }}</td>
+        <td>{{ current_status.course_fee }}</td>
+        <td>{{ current_status.instructor }}</td>
+        <td>{{ current_status.aadhar }}</td>
+        <td>{{ current_status.mobile }}</td>
+        <td>{{ current_status.email }}</td>
+        <td>{{ current_status.remarks }}</td>
+        <td>
+		<select name="status1">
+		<option value="">---------</option>
+		<option value="completed">completed</option>
+		<option value="delay">delay</option>
+		<option value="discontinued">discontinued</option>
+		</select>
+		</td>
+    </tr>	
+	{% endfor %}
+
+		<td style="text-align:center">  
+		<input type="submit" style="width: 100px; margin: 0 auto;" />  
+		</td>
+	
+	</table>
+{% endblock %}
+</form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>callings</title>
+</head>
+<body>
+	{% block content %}	
+<h1 align="center">callings</h1>
+<form method="POST">
+	{% csrf_token %}
+	<table align="center">
+		<tr>
+		<td>demo call</td>
+		<td>
+		<select name="demo call">
+		<option value="">---------</option>
+		{% for i in callings %}
+		<option value="{{ i.lead_status }}">{{ i.lead_status }}</option>
+		{% endfor %}
+		</select>
+		</td>
+		</tr>
+
+		<tr>
+		<td>DATE</td>
+		<td><input type="date" name="DATE"></td><br>
+		</tr>
+
+		<tr>
+		<td><input type="submit" name="date" value="find"></td><br>
+		</tr>
+	</table>
+</form>
+{% endblock %}
+</body>
+</html>
+
+
+
+
